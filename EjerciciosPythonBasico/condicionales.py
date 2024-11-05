@@ -1,5 +1,5 @@
-num1 = int(input('Por favor introduce un primer numero: '))
-num2 = int(input('Por favor introduce un segunfo numero: '))
+num1 = int(input('Por favor introduce un primer numero:  '))
+num2 = int(input('Por favor introduce un segunfo numero:  '))
 
 op = str(input("Porfavor introduce la inicial de la operacion que quieres resalizar, SUMA = 's', RESTA = 'r' MULTIPLICACION = 'm' DIVISION = 'd': "))
 
@@ -15,6 +15,9 @@ elif op == "m":
 elif op == "d":
     division = num1 / num2
     print(division)
+
+print(211212)
+
 
 
 
