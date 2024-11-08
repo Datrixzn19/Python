@@ -11,11 +11,11 @@ class Person:
 class Worker(Person):
     #aqui se ponen todos los atrubutos anteriores y los nuevos 
     def __init__(self, name, age, profession, salary):
-
-        #aqui los atributos que heredara
+        #aqui los atributos que heredara, se usa super para anadir
         super().__init__(name, age, profession)
+        #se hace el self de los nuevos atributos, los heredados no 
         self.salary = salary
-
+    #las clases hijas pueden reescribir los metodos heredados.
     def dance(self):
         print(['este metodo esta reescrito por la clase hija'])
 

@@ -1,1 +1,0 @@
-Que es la poo v
