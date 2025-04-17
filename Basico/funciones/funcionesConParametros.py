@@ -1,4 +1,4 @@
-def saludar(nombre):
+def saludar(nombre): #nombre es un argumento 
     print(f"¡Hola, {nombre}!")
 
 saludar("David")  #aqui pasamos el parametro que nos pide la funcion
@@ -13,7 +13,7 @@ saludar()
 
     #Retorno de valores 
 def sumar(a, b):
-    return a + b  # Retorna la suma
+    return a + b  # Retorna la suma, despues del return ya no se sigue ejecutando lo que haya debajo 
 
 print(sumar(10, 5))
 # resultado = sumar(10, 5)
