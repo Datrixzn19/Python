@@ -7,7 +7,7 @@ pueden recibir, utilzar y devolver datos
 
 """
     #Ejemplo basico
-def saludo():#llamado a la funcion 
+def saludo():#crear la funcion 
     name = input("Hola, cual es tu nombre?: ")
     print(f"Hola {name}! Bienvenido")
 
