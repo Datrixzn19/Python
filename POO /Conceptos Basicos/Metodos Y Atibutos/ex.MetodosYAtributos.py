@@ -16,7 +16,8 @@ nombre = input('Tipee su sumbre: ')
 edad = input('Tipee su edad: ')
 grado = input('Tipee su grado ')
 
-estudiante = Estudiante(nombre, edad, grado)
+estudiante = Estudiante(nombre, edad, grado)#Los valores introducidos por el usuario (nombre, edad y grado) se pasan al constructor y se asignan a los atributos del objeto.
+
 
 print(f"""
  DATOS DEL ESTUDIANTE:\n\n
@@ -25,6 +26,6 @@ print(f"""
     GRADO: {estudiante.grado}\n
 """)
 while True:
-    estudiar =input()
+    estudiar =input()#bucle de input hasta que ponga estudiar 
     if(estudiar.lower() == "estudiar"):
-      estudiante.estudiar
+        estudiante.estudiar()
