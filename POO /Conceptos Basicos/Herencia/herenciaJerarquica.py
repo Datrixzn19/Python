@@ -1,12 +1,11 @@
-# Definimos la clase base llamada Animal
 class Animal:
     # Constructor de la clase Animal, inicializa los atributos nombre y habitat
     def __init__(self, nombre, habitat):
-        self.nombre = nombre  # Atributo que guarda el nombre del animal
-        self.habitat = habitat  # Atributo que guarda el lugar donde vive el animal
+        self.nombre = nombre  
+        self.habitat = habitat  
 
-# Definimos una subclase llamada Agila (Águila) que hereda de la clase Animal
-class Agila(Animal):
+
+class Agila(Animal): #aguila hereda de animal
     # Constructor de la clase Agila, recibe además el atributo inteligencia
     def __init__(self, nombre, habitat, inteligencia):
         # Llamamos al constructor de la clase base (Animal) para inicializar nombre y habitat
@@ -22,15 +21,12 @@ class Perro(Animal):
         self.lealtad = lealtad  # Atributo específico de la clase Perro
 
 # Creamos una instancia de la clase Agila
-agila = Agila('agila', 'aire libre', ' alta')  # El águila tiene nombre, hábitat y un nivel de inteligencia
-
+agila = Agila('agila', 'aire libre', ' alta') 
 # Creamos una instancia de la clase Perro
-perro = Perro('perro', 'casa', ' alta')  # El perro tiene nombre, hábitat y un nivel de lealtad
+perro = Perro('perro', 'casa', ' alta') 
 
-# Imprimimos los atributos del objeto perro utilizando f-strings
+
 print(f'Nombre: {perro.nombre} , vive en: {perro.habitat} ,nivel de lealtad: {perro.lealtad}')
-
-# Imprimimos los atributos del objeto agila utilizando f-strings
 print(f'Nombre: {agila.nombre} , vive en: {agila.habitat} ,nivel de inteligencia: {agila.inteligencia}')
 
 
