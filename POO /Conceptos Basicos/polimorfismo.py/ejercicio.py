@@ -2,24 +2,24 @@
 
 #hacer un programa que de el nombre de algunos grupos de division taxonomica: ave anfibio mamifero 
 
-class Mamifero():
-    def nombrar():
+class Mamifero():#varias clases con el mismo nombre de un metodo dentro de ellas 
+    def nombrar(self):
         print("Hola soy un mamifero")
 
 class Ave():
-    def nombrar():
+    def nombrar(self):
         print("Hola soy un ave")
 
 class Anfibio():
-    def nombrar():
+    def nombrar(self):
         print("Hola soy un anfibio")
 
 class Reptil():
-    def nombrar():
+    def nombrar(self):
         print("Hola soy un reptil")
 
 def nombrarAnimal(tipo):
     tipo.nombrar()
-nombrarAnimal()
-animal = Reptil()
+
+animal = Reptil()#creamos una instancia de una clase y luego le pasamos como argumnento 
 nombrarAnimal(animal)

@@ -20,5 +20,5 @@ def describirPersona(persona):#recibira una instacia u objeto de una sde las cla
     persona.describir()#llamamos a el metodo escribir que se repite en las 3 clases 
 
 persona1 = Trabajador()
-describirPersona()#le pasamos la instancia de la clase 
+describirPersona(persona1)#le pasamos la instancia de la clase 
 describirPersona(Estudiante())#tambien se puede asi 
