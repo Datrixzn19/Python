@@ -4,8 +4,7 @@ class Vehiculo:
         self.marca = marca
         self.modelo = modelo
 
-# Crear instancia con valores por defecto
-auto1 = Vehiculo()
+auto1 = Vehiculo()#como no le pasamos los 2 args este tomara los que habiamos puesto por defecto 
 print(auto1.marca)  # Salida: Toyota
 print(auto1.modelo) # Salida: Corolla
 

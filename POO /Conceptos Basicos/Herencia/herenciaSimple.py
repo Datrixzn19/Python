@@ -11,8 +11,6 @@ class Person:
 class Worker(Person):
 
     def __init__(self, name, age, profession, salary):    #aqui se ponen todos los atrubutos anteriores(los vayas a heredar o no ) y los nuevos 
-      
-        
         
         super().__init__(name, age, profession)  #aqui los atributos que heredara, se usa super para anadir
         #al usar super ya no se pasa self porque por el mro python ya lo hace
