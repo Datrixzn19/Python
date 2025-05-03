@@ -26,13 +26,14 @@ class Vehiculo():#atributos generales para los vehiculos
         self.marca = marca
         self.modelo = modelo 
         self.año = año
+
     def mostrar_info(self):
         return f"Este auto es de marca: {self.marca}, su modelo es: {self.modelo}, su año es: {self.año}"
     
-class Auto(Vehiculo):
+class Auto(Vehiculo):#lo mismo que la clase vehiculo pero con un atributo mas tipo_combustible
     def __init__(self, marca="Desconocido", modelo="Desconocido", año="Desconocido", tipo_combustible="Desconocido\n"): #todos los atributos van aqui
         super().__init__(marca, modelo, año)#en este caso vamos a heredar todos
-        self.tipo_combustible = tipo_combustible
+        self.tipo_combustible = tipo_combustible#nuevo atributo 
 
 
     def mostrar_info(self):
