@@ -13,9 +13,8 @@ class BasePencil:
 class Esfero(BasePencil):
   #aquí se pone todos los atributos anteriores y los nuevos
   def __init__(self, color, tamaño, peso):
-  #aquí solo se pone los que va a heredar 
         
-      super().__init__(color, tamaño)
+      super().__init__(color, tamaño)#aquí solo se pone los que va a heredar 
       self.peso = peso
   def usoPrincipal(self):
     return 'mi uso princ. es escribir'
