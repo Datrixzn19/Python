@@ -11,7 +11,6 @@
 #     print(name)
 
 
-
             #EXERCISE
 #Recorre los numeros del uno al 50
 #si el numero es divisible para 3 imprime Fizz
