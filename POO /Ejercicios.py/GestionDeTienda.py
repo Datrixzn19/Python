@@ -53,11 +53,29 @@ class Producto():
             print("No tenemos ninguna unidad disponible por el momento")
 
 
+# class Tienda():  DABA ERROR 
+#     def __init__(self, inventario):
+#         self.inventario = [] 
+#     def agregar_producto(self, agregar):
+#         if isinstance(agregar, Producto):#que sea una instancia de la clase Producto 
+#             self.catalogo.append(agregar)  # Agregamos el objeto a la lista
+#             return f"El prducto agregado tiene las caracteristicas -> Atruculo: {self.nombre}, precio: {self._precio}, unidades en stock: {self.stock}"
+#         else:
+#             return "UPS, algo fallo al intentar agregar el producto"
 class Tienda():
-    def __init__(self, inventario):
-        self.inventario = [] 
-    def agregar_producto(self, producto):
-        productoAgregar = 
+    def __init__(self, inventario=None):  # Ahora inventario puede ser opcional
+        if inventario is None:
+            self.inventario = []  # Si no se pasa nada, iniciamos con una lista vacía
+        else:
+            self.inventario = inventario  # Si se pasa una lista, la usamos
+
+    def agregar_producto(self, agregar):
+        if isinstance(agregar, Producto):  # Validamos que sea una instancia de Producto
+            self.inventario.append(agregar)  # Agregamos el producto a la tienda
+            return f"Producto agregado -> {agregar}"
+        else:
+            return "UPS, algo falló al intentar agregar el producto"
+
 
 
 
@@ -77,3 +95,8 @@ print(producto._precio)#o: el nuevo valor del input
 #vender unidades del producto 
 venderUnidades = int(input("Intrduzca la cantidad de unidades a vender: "))
 producto.vender(venderUnidades)
+
+#agregar producto 
+agregar = Producto("Coca cola", 1, 2000)#instacia de la clase producto
+miTIenda = Tienda() #instancia de la clase tienda 
+print(miTIenda.agregar_producto(agregar))
