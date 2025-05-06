@@ -83,11 +83,16 @@ class Tienda():
             print("No tenemos productos disponibles")
         else:
             for i, producto in enumerate(self.inventario, 1):
-                estado = "Disponible" if producto.stock > 0 else "Agotado"
-                print(f"{i}. {producto.nombre}, Precio: {producto.precio}, Unidades en stock: {producto.stock}, Estado: {estado}")
+                if producto.stock > 0:
+                    print("Disponible") 
+                else:
+                    print("Agotado") 
+                #estado = "Disponible" if producto.stock > 0 else "Agotado" version simpolificada del anterior if
+                print(f"{i}. {producto.nombre}, Precio: {producto.precio}, Unidades en stock: {producto.stock}")
 
 # Crear instancia de Producto
 producto = Producto("Reloj de acero inoxidable", 15, 100)
+
 print(producto)
 
 # Cambiar el precio
@@ -99,10 +104,24 @@ print(producto.precio)  # Nuevo valor del producto
 vender_unidades = int(input("Introduzca la cantidad de unidades a vender: "))
 producto.vender(vender_unidades)
 
+mi_tienda = Tienda()
+
+
 # Agregar producto
 agregar = Producto("Coca Cola", 1, 2000)
-mi_tienda = Tienda()
-print(mi_tienda.agregar_producto(agregar))
+producto1 = Producto("Reloj de acero inoxidable", 15, 100)
+producto2 = Producto("Coca Cola", 1, 2000)
+producto3 = Producto("Laptop Gamer", 1200, 5)
+producto4 = Producto("Smartphone", 800, 10)
+# Agregar productos a la tienda
+mi_tienda.agregar_producto(producto1)
+mi_tienda.agregar_producto(producto2)
+mi_tienda.agregar_producto(producto3)
+mi_tienda.agregar_producto(producto4)
+
+
+
+#print(mi_tienda.agregar_producto(agregar))
 
 # Mostrar inventario
 mi_tienda.mostrar_inventario()
