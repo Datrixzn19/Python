@@ -72,6 +72,8 @@ class Biblioteca():
             print("La biblioteca está vacía.")
         else:
             for i, libro in enumerate(self.catalogo, 1):
+            #Si libro.disponible == True, entonces estado = "Disponible"
+            #Si libro.disponible == False, entonces estado = "Prestado"
                 estado = "Disponible" if libro.disponible else "Prestado"
                 print(f"{i}. {libro.titulo} - {libro.autor} [{estado}]")
 

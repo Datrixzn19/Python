@@ -29,17 +29,17 @@ agregar_producto(producto): Añade objetos Producto a la tienda.
 mostrar_inventario(): Recorre la lista e imprime la información de cada producto.
 """
 class Producto():
-    def __init__(self, nombre, _precio, stock):
+    def __init__(self, nombre, precio, stock):
         self.nombre = nombre
-        self._precio = _precio #el precio estara protegido 
+        self.precio = precio 
         self.stock = stock
 
     def __str__(self):#metodo magico 
-        return f"Atruculo: {self.nombre}, precio: {self._precio}, unidades en stock: {self.stock}"
+        return f"Atruculo: {self.nombre}, precio: {self.precio}, unidades en stock: {self.stock}"
     
     def actualizar_precio(self, nuevoPrecio):#actualiza el precio simepre y cuando sea positivo
         if nuevoPrecio > 0:
-            self._precio = nuevoPrecio
+            self.precio = nuevoPrecio
 
     def vender(self, venderUnidades):#vende si hay en stock y si la cantiddad que pide es menor a la quye hay dispobible
         if self.stock > 0:
@@ -75,28 +75,34 @@ class Tienda():
             return f"Producto agregado -> {agregar}"
         else:
             return "UPS, algo falló al intentar agregar el producto"
+        
+       
+    def mostrar_inventario(self):
+        print("Lista de productos:\n") 
+        if not self.inventario:
+            print("No tenemos productos disponibles")
+        else:
+            for i, producto in enumerate(self.inventario, 1):
+                estado = "Disponible" if producto.stock > 0 else "Agotado"
+                print(f"{i}. {producto.nombre}, Precio: {producto.precio}, Unidades en stock: {producto.stock}, Estado: {estado}")
 
-
-
-
-
-producto = Producto("Reloj de acero inoxidable",15,100)
-#imprimir datos
+# Crear instancia de Producto
+producto = Producto("Reloj de acero inoxidable", 15, 100)
 print(producto)
 
-#imprimir precio actual
-print(producto._precio)#o: 15
+# Cambiar el precio
+nuevo_valor = int(input("Introduce un nuevo precio para ese producto: "))
+producto.actualizar_precio(nuevo_valor)
+print(producto.precio)  # Nuevo valor del producto
 
-#cambiar el valor 
-nuevovalor = int(input("Introduce un nuevo precio para ese producto: "))
-producto.actualizar_precio(nuevovalor)
-print(producto._precio)#o: el nuevo valor del input
-    
-#vender unidades del producto 
-venderUnidades = int(input("Intrduzca la cantidad de unidades a vender: "))
-producto.vender(venderUnidades)
+# Vender unidades
+vender_unidades = int(input("Introduzca la cantidad de unidades a vender: "))
+producto.vender(vender_unidades)
 
-#agregar producto 
-agregar = Producto("Coca cola", 1, 2000)#instacia de la clase producto
-miTIenda = Tienda() #instancia de la clase tienda 
-print(miTIenda.agregar_producto(agregar))
+# Agregar producto
+agregar = Producto("Coca Cola", 1, 2000)
+mi_tienda = Tienda()
+print(mi_tienda.agregar_producto(agregar))
+
+# Mostrar inventario
+mi_tienda.mostrar_inventario()
