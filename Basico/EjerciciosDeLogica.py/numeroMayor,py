@@ -1,0 +1,21 @@
+#De tres inputs halla el numro mayor
+#dar solucion si todos son iguales
+#dar solucion si hay dos numeros mayores iguales
+
+
+num1 = int(input("Ingresa el primer numero: "))
+num2 = int(input("Ingresa el segundo numero: "))
+num3 = int(input("Ingresa el tercer numero: "))
+
+lista = [num1, num2, num3]
+
+listaOrdenada = sorted(lista)#odena en orden ej; 3,5,12
+
+print(f"lista ordenada: {listaOrdenada}")
+
+if(num1 == num2 == num3):
+    print("Todos son iguales")
+elif listaOrdenada[2] == listaOrdenada[1]:#comparamos el segundo y tercer numero porque podrian ser iguales
+    print(f"Hay dos numeros mayores repetidos: {listaOrdenada[2]}")
+else:#si ningun anterior if se cumple entoces solo hay un numero mayor
+    print(f"El numreo mayor es {listaOrdenada[2]}")
