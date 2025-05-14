@@ -17,7 +17,6 @@ Mostrar información de todos los estudiantes: Muestra el nombre, edad y promedi
 
 Calcular el promedio general de la clase: Calcula el promedio de las notas de todos los estudiantes.
 
-Buscar un estudiante por nombre: Permite buscar un estudiante y mostrar su información.
 
 """
 
@@ -28,20 +27,31 @@ class Estudiante:
         self.notas = notas
 
     def obtener_promedio(self):
-        return sum(self.notas) / len(self.notas) if self.notas else 0  # Evita división por 0
+        #sum devulve la suma de todas las notas, dividido entre la longitud de la lista de notas
+        return sum(self.notas) / len(self.notas) if self.notas else 0  #if self.notas, Python internamente evalúa la "verdad" del objeto. Es decir que retorna solo si la lista tiene elementos
 
-    def __str__(self):
+    def __str__(self):#metodo magico
         return f"Nombre: {self.nombre}, Edad: {self.edad}, Promedio: {self.obtener_promedio():.2f}"
+    """
+    .2f es una especificación de formato dentro de una cadena f-string.
+    .  Indica que queremos formatear decimales.
+
+    2  Número de decimales que queremos.
+
+    f  Indica que queremos formato de número flotante (decimal).
+
+    """
 
     
 
 class Escuela:
     def __init__(self):
-        self.estudiantes = []  # Lista de estudiantes
+        self.estudiantes = []  # Lista de estudiantes, por ahora vacia
 
     def agregar_estudiante(self, nombre, edad, notas):
-        estudiante = Estudiante(nombre, edad, notas)
-        self.estudiantes.append(estudiante)
+
+        estudiante = Estudiante(nombre, edad, notas)#instancia de la clase Estudiante 
+        self.estudiantes.append(estudiante)#vamos agregando estudiantes a la lista
         print(f"✅ Estudiante {nombre} agregado con éxito!")
 
     def mostrar_estudiantes(self):
