@@ -6,29 +6,28 @@ class Personaje:
         self.__fuerza = fuerza
         self.__inteligencia = inteligencia
         self.__defensa = defensa
-        self.__vida = vida
+        self._vida = vida
 
-    def atributos(self):
-        print(self.__nombre, ":", sep="" )
-        print("fuerza= ", self.__fuerza)
-        print("inteligeancia=", self.__inteligencia)
-        print("defensa= ", self.__defensa)
-        print("vida=", self.__vida) 
   
     def __morir(self):
-        self.__vida = 0
+        self.__vida = 0 #se debe acceder solo desde dentro de la clase
         print(self.__nombre, " ha muerto")
     
-    def get_fuerza (self):#es para acceder
+    def get_fuerza (self):#es para acceder, se usa en get+nombre del atributo
         return self.__fuerza
     
-    def set_fuerza(self, fuerza):#paara modificar 
-        if self.__fuerza <0:
+    def set_fuerza(self, fuerza):#para modificar 
+        if self.__fuerza <0:#incluso podemos poner logica para controlar ciertos aspectos 
             print("no se puede tener una fuerza negativa")
         else:
-            self.__fuerza = fuerza
+            self.__fuerza = fuerza #modificamos de esta manera
 
-    
 
-personaje = Personaje("dacis",10,9,9,100)   
-personaje.set_fuerza(5)
+
+
+personaje = Personaje("nombre",1,2,3,4)
+
+
+print(personaje.get_fuerza())#esta es la manera correcta de acceder a metodos privados
+personaje.set_fuerza(99)#aqui modificamos con set
+print(personaje.get_fuerza())
