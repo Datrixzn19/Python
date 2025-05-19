@@ -12,7 +12,10 @@ class PersonajeDBZ:#clase generica
     def get_vida(self):#obtenemos el valor de daño que es privado
         return self.__vida
     def set_vida(self, nuevaVida):
-        pass 
+        if nuevaVida < 0:
+            self.__vida = 0  # Evita valores negativos
+        else:
+            self.__vida = nuevaVida
 
     def get_nivel(self):
         return self.__nivel#mostrar nivel actual 
@@ -27,7 +30,7 @@ class PersonajeDBZ:#clase generica
             print(f"El ataque ha sido efectuado, le queda {self.get_vida()} puntos de vida")
     
     def ataque(self, rival):#recibe un rival y modifica su vida 
-        self.set_vida -= self.daño*self.__nivel
+        rival.set_vida(rival.get_vida() - self.daño * self.get_nivel())
         print(f"Este personaje a atacado y ha hecho {100 - rival.__vida} de daño")
         rival.morir()#con este metodo avisamos su muere o cuanta vida le queda
     
@@ -47,7 +50,7 @@ vegeta = PersonajeDBZ("Vegeta", 100, 15, 2)
 
 goku.ataque(vegeta)
 
-
+print(vegeta.get_vida())
 
 
 #los niveles funcionan de manera correcta 
