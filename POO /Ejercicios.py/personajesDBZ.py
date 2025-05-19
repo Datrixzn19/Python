@@ -30,10 +30,12 @@ class PersonajeDBZ:#clase generica
             print(f"El ataque ha sido efectuado, le queda {self.get_vida()} puntos de vida")
     
     def ataque(self, rival):#recibe un rival y modifica su vida 
-        rival.set_vida(rival.get_vida() - self.daño * self.get_nivel())
-        print(f"Este personaje a atacado y ha hecho {100 - rival.__vida} de daño")
-        rival.morir()#con este metodo avisamos su muere o cuanta vida le queda
-    
+        vida_antes = rival.get_vida()  # Guarda la vida antes del ataque
+        rival.set_vida(vida_antes - self.daño * self.get_nivel())  # Aplica el daño
+
+        print(f"Este personaje ha atacado y ha hecho {vida_antes - rival.get_vida()} de daño")  # Ahora el cálculo es correcto
+        rival.morir()  # Verificamos si el rival sigue vivo
+
 
 
 
@@ -46,7 +48,7 @@ class humano(PersonajeDBZ):
 
 
 goku = PersonajeDBZ("Goku", 100, 20, 2)
-vegeta = PersonajeDBZ("Vegeta", 100, 15, 2)
+vegeta = PersonajeDBZ("Vegeta", 200, 15, 2)
 
 goku.ataque(vegeta)
 
@@ -57,10 +59,3 @@ print(vegeta.get_vida())
 # print(vegeta.get_nivel())
 # vegeta.set_nivel()
 # print(vegeta.get_nivel())
-"""
-cosas para la siguietne vez
-mostrar vida y damage en cada ataque 
-
-
-"""
-
