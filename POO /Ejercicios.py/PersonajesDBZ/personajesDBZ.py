@@ -2,7 +2,7 @@
 # HERENCIA ABSTRACCION ENCAPSULACION POLIMORFISMO
 
 class PersonajeDBZ:#clase generica 
-    def __init__(self, nombre, vida, daño, nivel):
+    def __init__(self, nombre, vida, daño, nivel,):
         self.nombre = nombre
         self.__vida = vida 
         self.daño = daño 
