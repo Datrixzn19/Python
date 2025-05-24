@@ -9,7 +9,7 @@ class PersonajeDBZ:#clase generica
         self.__nivel = nivel
 
 
-    def get_vida(self):#obtenemos el valor de daño que es privado
+    def get_vida(self):#obtenemos el valor de vida que es privado
         return self.__vida
     def set_vida(self, nuevaVida):
         if nuevaVida < 0:
@@ -40,19 +40,7 @@ class PersonajeDBZ:#clase generica
 
 
 
-class Sayan(PersonajeDBZ):
-    pass 
 
-class humano(PersonajeDBZ):
-    pass 
-
-
-goku = PersonajeDBZ("Goku", 100, 20, 2)
-vegeta = PersonajeDBZ("Vegeta", 200, 15, 2)
-
-goku.ataque(vegeta)
-
-print(vegeta.get_vida())
 
 
 #los niveles funcionan de manera correcta 
