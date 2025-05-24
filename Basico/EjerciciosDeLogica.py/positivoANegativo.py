@@ -11,7 +11,7 @@ def make_negative(number):
     
 print(make_negative(66))
 
-    #solucion 2\
+    #solucion 2
 #la func abs convierte los negativos a positivos, asi que usaremos -abs para hacer lo inverso
 def hacerNegativo(number):
     return -abs(number)
