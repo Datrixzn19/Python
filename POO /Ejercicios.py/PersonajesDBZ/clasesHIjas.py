@@ -28,8 +28,13 @@ class Sayan(PersonajeDBZ):
           print("No hay energia suficiente para hacer el ataque especial")
 
     def aumentarEnergia(self):
-            self.energia =+ 10
-            return self.energia
+            if self.energia>100:
+                print("Tu energia esta al maximo")
+            else:
+                self.energia += 20
+
+                print(f"la energia es de {self.energia}")
+
 
 
 
@@ -42,21 +47,15 @@ trunks = Sayan("Vegeta", 100, 15, 2, 1, 20)
 
 #bardok.ataqueEspecial(trunks
 print(f"la vida de trunks es {trunks.get_vida()}")
+bardok.aumentarEnergia()
 
+bardok.aumentarEnergia()
+bardok.aumentarEnergia()
+bardok.aumentarEnergia()
+bardok.aumentarEnergia()
+bardok.aumentarEnergia()
 
-bardok.transformacion()
-
-
-print(f"la vida de trunks es {trunks.get_vida()}")
-bardok.ataqueEspecial(trunks)
-
-
-print(f"la vida de trunks es {trunks.get_vida()}")
-
-
-
-
-
+print(bardok.energia)
 # class Humano(PersonajeDBZ):
 #     def __init__(self, nombre, vida, daño, nivel):
 #         super().__init__(nombre, vida, daño, nivel) 
