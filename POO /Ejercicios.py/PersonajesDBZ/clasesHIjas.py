@@ -56,19 +56,6 @@ bardok.aumentarEnergia()
 bardok.aumentarEnergia()
 
 print(bardok.energia)
-# class Humano(PersonajeDBZ):
-#     def __init__(self, nombre, vida, daño, nivel):
-#         super().__init__(nombre, vida, daño, nivel) 
 
 
 
-
-
-
-
-# goku = PersonajeDBZ("\nGoku", 100, 20, 2)
-# vegeta = PersonajeDBZ("Vegeta", 100, 15, 2)
-
-# goku.ataque(vegeta)
-
-# print(vegeta.get_vida())
